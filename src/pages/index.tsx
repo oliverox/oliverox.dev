@@ -73,7 +73,7 @@ const Home: NextPage = () => {
                 <h3 className="text-2xl font-bold">Tech Stack →</h3>
               </div>
               <div className="text-lg">
-                Glance into Oliver's favorite tech stack for quickly building
+                Glance into Oliver&apos;s favorite tech stack for quickly building
                 high quality web apps.
               </div>
             </Link>
@@ -87,7 +87,7 @@ const Home: NextPage = () => {
                 <h3 className="text-2xl font-bold">Guestbook →</h3>
               </div>
               <div className="text-lg">
-                Don't be shy! Let Oliver know you dropped by.
+                Don&apos;t be shy! Let Oliver know you dropped by.
               </div>
             </Link>
           </div>
