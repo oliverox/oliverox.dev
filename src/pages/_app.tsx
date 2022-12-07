@@ -1,14 +1,15 @@
 import { type AppType } from "next/app";
-import { type Session } from "next-auth";
 import { trpc } from "../utils/trpc";
-
+import { Analytics } from "@vercel/analytics/react";
 import "../styles/globals.css";
 
-const MyApp: AppType<{ session: Session | null }> = ({
-  Component,
-  pageProps: { ...pageProps },
-}) => {
-  return <Component {...pageProps} />;
+const MyApp: AppType = ({ Component, pageProps: { ...pageProps } }) => {
+  return (
+    <>
+      <Component {...pageProps} />;
+      <Analytics />
+    </>
+  );
 };
 
 export default trpc.withTRPC(MyApp);
