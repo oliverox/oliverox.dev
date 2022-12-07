@@ -26,11 +26,6 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>Oliverox.Dev</title>
-        <meta
-          name="description"
-          content="All your web needs under control with Oliver"
-        />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-center">
         <div className="container flex flex-col items-center justify-center gap-6 px-4 py-16 ">
