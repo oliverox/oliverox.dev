@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.background-animate {
+  background-size: 400%;
+  -webkit-animation: BackgroundAnim 30s ease infinite;
+  -moz-animation: BackgroundAnim 30s ease infinite;
+  animation: BackgroundAnim 30s ease infinite;
+}
+
+@keyframes BackgroundAnim {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}

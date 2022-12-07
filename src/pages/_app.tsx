@@ -8,12 +8,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
   Component,
   pageProps: { ...pageProps },
 }) => {
-  return (
-    <>
-      <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-        <Component {...pageProps} />
-    </>
-  );
+  return <Component {...pageProps} />;
 };
 
 export default trpc.withTRPC(MyApp);

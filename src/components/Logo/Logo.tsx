@@ -1,39 +1,8 @@
-/* Resizable logo component for oliverox.dev */
-
-type LogoProps = {
-  size?: "xs" | "sm" | "md" | "lg";
-};
-
-function Logo({ size = 'sm' }: LogoProps) {
-  let s;
-  switch (size) {
-    case "xs":
-      s = "12%";
-      break;
-
-    case "sm":
-      s = "25%";
-      break;
-
-    case "md":
-      s = "50%";
-      break;
-
-    case "lg":
-      s = "100%";
-      break;
-
-    default:
-      s = "100%";
-      break;
-  }
+function Logo() {
   return (
     <svg
       viewBox="0 0 225 144"
-      style={{
-        width: s,
-        height: s,
-      }}
+      style={{ maxWidth: '100px'}}
     >
       <g
         transform="matrix(2.8772396482124964,0,0,2.8772396482124964,679.3162106978618,-1138.8114176399517)"
