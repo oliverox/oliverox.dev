@@ -5,7 +5,6 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <title>Oliverox.Dev</title>
         <meta
           name="description"
           content="All your web needs under control with Oliver Oxenham"

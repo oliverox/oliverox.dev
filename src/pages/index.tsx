@@ -14,6 +14,7 @@ const MenuLink = ({ href, target = "_blank", children }: any) => {
     <Link
       className="flex max-w-xs flex-col gap-5 rounded-xl bg-white/10 p-5 text-white hover:bg-white/20"
       href={href}
+      rel="noreferrer"
       target={target}
     >
       {children}
@@ -85,6 +86,7 @@ const Home: NextPage = () => {
             <a
               href="https://twitter.com/oliveroxenham"
               target="_blank"
+              rel="noreferrer"
               className="text-gray-400 hover:text-gray-500"
             >
               <svg
@@ -98,6 +100,7 @@ const Home: NextPage = () => {
             <a
               href="https://mu.linkedin.com/in/oliver-oxenham-a33696"
               target="_blank"
+              rel="noreferrer"
               className="text-gray-400 hover:text-gray-500"
             >
               <svg
