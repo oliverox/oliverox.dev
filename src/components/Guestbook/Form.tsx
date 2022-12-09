@@ -28,6 +28,7 @@ export default function Form() {
           postMessage.mutate({
             name: session.user?.name as string,
             message,
+            createdAt: new Date() 
           });
           setMessage("");
         }

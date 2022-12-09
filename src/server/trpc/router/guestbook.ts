@@ -10,6 +10,7 @@ export const guestbookRouter = router({
         select: {
           name: true,
           message: true,
+          createdAt: true
         },
         orderBy: {
           createdAt: "desc",
@@ -25,6 +26,7 @@ export const guestbookRouter = router({
       z.object({
         name: z.string(),
         message: z.string(),
+        createdAt: z.date()
       })
     )
     .mutation(async ({ ctx, input }) => {
@@ -33,6 +35,7 @@ export const guestbookRouter = router({
           data: {
             name: input.name,
             message: input.message,
+            createdAt: input.createdAt
           },
         });
       } catch (error) {
