@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+#__next {
+  min-height: 100vh;
+}
+
 .background-animate {
   background-size: 400%;
   -webkit-animation: BackgroundAnim 30s ease infinite;
