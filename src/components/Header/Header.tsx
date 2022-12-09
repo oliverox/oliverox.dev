@@ -96,6 +96,8 @@ export default function Header({ h1 = "" }) {
                               className="h-8 w-8 rounded-full"
                               src={user.imageUrl}
                               alt=""
+                              width={32}
+                              height={32}
                             />
                           </Menu.Button>
                         </div>
@@ -172,10 +174,12 @@ export default function Header({ h1 = "" }) {
               <div className="border-t border-gray-700 pt-4 pb-3">
                 <div className="flex items-center px-5">
                   <div className="flex-shrink-0">
-                    <img
+                    <Image
                       className="h-10 w-10 rounded-full"
                       src={user.imageUrl}
                       alt=""
+                      width={40}
+                      height={40}
                     />
                   </div>
                   <div className="ml-3">
