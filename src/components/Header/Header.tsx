@@ -152,7 +152,7 @@ export default function Header({ h1 = "" }) {
               </div>
             </div>
 
-            <Disclosure.Panel className="absolute top-[65px] w-full border-b border-gray-700 bg-gray-800 md:hidden">
+            <Disclosure.Panel className="absolute top-[65px] w-full border-b border-gray-700 bg-gray-800 md:hidden z-10">
               <div className="space-y-1 px-2 py-3 sm:px-3">
                 {getNavigation(pathname).map((item) => (
                   <Disclosure.Button

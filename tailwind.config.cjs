@@ -10,5 +10,15 @@ module.exports = {
       }
     },
   },
+  daisyui: {
+    themes: [
+      {
+        light: {
+          ...require("daisyui/src/colors/themes")["[data-theme=light]"],
+          accent: "#4ee4fc",
+        },
+      },
+    ],
+  },
   plugins: [require("@tailwindcss/typography"), require("daisyui")],
 };
