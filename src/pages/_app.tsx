@@ -25,7 +25,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
     <SessionProvider session={session}>
       <div className={`min-h-screen ${getBgColor()}`}>
         <Component {...pageProps} />
-        <Analytics />
+        {process.env.NODE_ENV === "production" && <Analytics />}
       </div>
     </SessionProvider>
   );
