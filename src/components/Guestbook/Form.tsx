@@ -46,7 +46,7 @@ export default function Form() {
       <button
         type="submit"
         disabled={session ? false : true}
-        className="btn btn-accent"
+        className="btn btn-neutral"
       >
         {session ? "Post" : "Sign in to post"}
       </button>

@@ -1,8 +1,9 @@
 import Link from "next/link";
-import Image from 'next/image';
+import Image from "next/image";
 import Logo from "../Logo/Logo";
 import { Fragment } from "react";
 import { useRouter } from "next/router";
+import { signIn, signOut, useSession } from "next-auth/react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
@@ -32,9 +33,7 @@ const getNavigation = (pathname: string) => {
     },
   ];
 };
-const userNavigation = [
-  { name: "Sign out", href: "#" },
-];
+const userNavigation = [{ name: "Sign out", href: "#" }];
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
@@ -42,6 +41,7 @@ function classNames(...classes: any) {
 
 export default function Header({ h1 = "" }) {
   const router = useRouter();
+  const { data: session, status } = useSession();
   const { pathname } = router;
   return (
     <div className="bg-gray-800 pb-32">
@@ -60,7 +60,7 @@ export default function Header({ h1 = "" }) {
                     <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
                         {getNavigation(pathname).map((item) => (
-                          <a
+                          <Link
                             key={item.name}
                             href={item.href}
                             className={classNames(
@@ -72,7 +72,7 @@ export default function Header({ h1 = "" }) {
                             aria-current={item.current ? "page" : undefined}
                           >
                             {item.name}
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     </div>
@@ -111,21 +111,28 @@ export default function Header({ h1 = "" }) {
                           leaveTo="transform opacity-0 scale-95"
                         >
                           <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                            {userNavigation.map((item) => (
-                              <Menu.Item key={item.name}>
-                                {({ active }) => (
-                                  <a
-                                    href={item.href}
-                                    className={classNames(
-                                      active ? "bg-gray-100" : "",
-                                      "block px-4 py-2 text-sm text-gray-700"
-                                    )}
-                                  >
-                                    {item.name}
-                                  </a>
-                                )}
+                            {session && (
+                              <Menu.Item>
+                                <Link
+                                  className="block px-4 py-2 text-sm text-gray-700"
+                                  href=""
+                                  onClick={() => signOut()}
+                                >
+                                  Sign out
+                                </Link>
                               </Menu.Item>
-                            ))}
+                            )}
+                            {!session && (
+                              <Menu.Item>
+                                <Link
+                                  className="block px-4 py-2 text-sm text-gray-700"
+                                  href=""
+                                  onClick={() => signOut()}
+                                >
+                                  Sign in
+                                </Link>
+                              </Menu.Item>
+                            )}
                           </Menu.Items>
                         </Transition>
                       </Menu>
@@ -152,7 +159,7 @@ export default function Header({ h1 = "" }) {
               </div>
             </div>
 
-            <Disclosure.Panel className="absolute top-[65px] w-full border-b border-gray-700 bg-gray-800 md:hidden z-10">
+            <Disclosure.Panel className="absolute top-[65px] z-10 w-full border-b border-gray-700 bg-gray-800 md:hidden">
               <div className="space-y-1 px-2 py-3 sm:px-3">
                 {getNavigation(pathname).map((item) => (
                   <Disclosure.Button
