@@ -25,6 +25,7 @@ export const guestbookRouter = router({
     .input(
       z.object({
         name: z.string(),
+        email: z.string(),
         message: z.string(),
         createdAt: z.date()
       })
@@ -34,6 +35,7 @@ export const guestbookRouter = router({
         await ctx.prisma.guestbook.create({
           data: {
             name: input.name,
+            email: input.email,
             message: input.message,
             createdAt: input.createdAt
           },

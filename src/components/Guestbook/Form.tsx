@@ -21,12 +21,13 @@ export default function Form() {
 
   return (
     <form
-      className="flex gap-2 w-full justify-center pb-4"
+      className="flex gap-2 max-w-md justify-center pb-4 mx-auto"
       onSubmit={(event) => {
         event.preventDefault();
         if (session) {
           postMessage.mutate({
             name: session.user?.name as string,
+            email: session.user?.email as string,
             message,
             createdAt: new Date() 
           });
@@ -41,7 +42,7 @@ export default function Form() {
         minLength={2}
         maxLength={100}
         onChange={(event) => setMessage(event.target.value)}
-        className="text-sm bg-neutral-900 rounded-md border-2 border-neutral px-4 py-2 focus:outline-none w-96"
+        className="text-sm bg-neutral-900 rounded-md border-2 border-neutral px-4 py-2 focus:outline-none flex-grow"
       />
       <button
         type="submit"

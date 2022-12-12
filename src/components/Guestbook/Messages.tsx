@@ -12,7 +12,7 @@ export default function Messages() {
 
   if (isLoading) {
     return (
-      <div className="w-full text-center">
+      <div className="w-full text-center my-4">
         <Loading text="Fetching messages..." />
       </div>
     );
@@ -22,13 +22,14 @@ export default function Messages() {
     <div className="mx-auto mt-5 flex max-w-lg flex-col gap-4">
       {messages?.map((msg: msgType, index: number) => {
         const chatContainerClasses = ["chat", "basis-full"];
-        const chatBubbleClasses = ["chat-bubble", "mx-auto", "p-4", "w-5/6"];
+        const chatBubbleClasses = ["chat-bubble", "mx-auto", "p-4", "w-full", "lg:w-5/6", "drop-shadow-md"];
         const chatTextClasses = ["mt-2", "flex", "flex-col"];
         if (msg.name === "Oliver Oxenham") {
           chatContainerClasses.push("chat-end");
           chatBubbleClasses.push("chat-bubble-neutral");
           chatTextClasses.push("text-right");
         } else {
+          chatContainerClasses.push("chat-start");
           chatBubbleClasses.push("chat-bubble-accent");
         }
         return (
@@ -36,8 +37,8 @@ export default function Messages() {
             <div className={chatBubbleClasses.join(" ")}>
               <p>{msg.message}</p>
               <div className={chatTextClasses.join(" ")}>
-                <span className="text-[11px] italic">{msg.name}</span>
-                <span className="text-[11px] text-gray-400">
+                <span className="text-[11px] italic capitalize">{msg.name}</span>
+                <span className="text-[10px] text-gray-500">
                   {msg.createdAt.toDateString()}
                 </span>
               </div>
