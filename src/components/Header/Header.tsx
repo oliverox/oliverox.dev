@@ -167,9 +167,8 @@ export default function Header({ h1 = "" }) {
             <Disclosure.Panel className="absolute top-[65px] z-10 w-full border-b border-gray-700 bg-gray-800 md:hidden">
               <div className="space-y-1 px-2 py-3 sm:px-3">
                 {getNavigation(pathname).map((item) => (
-                  <Disclosure.Button
+                  <Link
                     key={item.name}
-                    as="a"
                     href={item.href}
                     className={classNames(
                       item.current
@@ -180,47 +179,36 @@ export default function Header({ h1 = "" }) {
                     aria-current={item.current ? "page" : undefined}
                   >
                     {item.name}
-                  </Disclosure.Button>
+                  </Link>
                 ))}
               </div>
               <div className="border-t border-gray-700 pt-4 pb-3">
                 <div className="flex items-center px-5">
                   <div className="flex-shrink-0">
-                    <Image
-                      className="h-10 w-10 rounded-full"
-                      src={user.imageUrl}
-                      alt=""
-                      width={40}
-                      height={40}
-                    />
+                    {session && session.user ? (
+                      <Image
+                        className="h-8 w-8 rounded-full"
+                        src={session.user.image || ""}
+                        alt=""
+                        width={32}
+                        height={32}
+                      />
+                    ) : (
+                      <UserIcon className="h-5 w-5 fill-white" />
+                    )}
                   </div>
-                  <div className="ml-3">
-                    <div className="text-base font-medium leading-none text-white">
-                      {user.name}
-                    </div>
-                    <div className="text-sm font-medium leading-none text-gray-400">
-                      {user.email}
-                    </div>
+                  <div className="ml-3 text-base font-medium leading-none text-white">
+                    {session?.user?.name}
                   </div>
-                  <button
-                    type="button"
-                    className="ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                  >
-                    <span className="sr-only">View notifications</span>
-                    <BellIcon className="h-6 w-6" aria-hidden="true" />
-                  </button>
                 </div>
                 <div className="mt-3 space-y-1 px-2">
-                  {userNavigation.map((item) => (
-                    <Disclosure.Button
-                      key={item.name}
-                      as="a"
-                      href={item.href}
-                      className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
-                    >
-                      {item.name}
-                    </Disclosure.Button>
-                  ))}
+                  <Link
+                    href=""
+                    onClick={() => signOut()}
+                    className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
+                  >
+                    Sign out
+                  </Link>
                 </div>
               </div>
             </Disclosure.Panel>
