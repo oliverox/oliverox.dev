@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { type NextPage } from "next";
 import Layout from "../components/Layout/Layout";
-import HireButton from '../components/HireButton/HireButton';
+import HireButton from "../components/HireButton/HireButton";
 
 const Foundation: NextPage = () => {
   return (
@@ -13,8 +13,8 @@ const Foundation: NextPage = () => {
       {/* <main className="max-w prose mx-auto -mt-32 max-w-4xl rounded-lg bg-white"> */}
       <main className="-mt-32">
         <div className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
-          <article className="prose mx-auto rounded-lg bg-white px-5 py-12 shadow sm:px-6">
-            <blockquote className="border-0 text-center text-xl -ml-8">
+          <article className="prose mx-auto rounded-lg border-neutral-content border-2 bg-base-100 px-5 py-12 shadow sm:px-6 pb-20 text-base-content">
+            <blockquote className="-ml-8 border-0 text-center text-xl">
               <p>
                 Truthfulness is the foundation
                 <br />
@@ -82,7 +82,9 @@ const Foundation: NextPage = () => {
               </Link>{" "}
               for your peace of mind and assured quality.
             </p>
-            <div className="flex justify-center mt-12"><HireButton /></div>
+            <div className="mt-12 flex justify-center">
+              <HireButton />
+            </div>
           </article>
         </div>
       </main>

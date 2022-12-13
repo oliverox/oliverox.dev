@@ -9,13 +9,13 @@ import {
 } from "@heroicons/react/24/solid";
 import Logo from "../components/Logo/Logo";
 import Footer from "../components/Footer/Footer";
-import HireButton from '../components/HireButton/HireButton';
-import ThemeSwitcher from '../components/ThemeSwitcher/ThemeSwitcher';
+import HireButton from "../components/HireButton/HireButton";
+import ThemeSwitcher from "../components/ThemeSwitcher/ThemeSwitcher";
 
 const MenuLink = ({ href, target = "_self", children }: any) => {
   return (
     <Link
-      className="flex max-w-xs flex-col gap-5 rounded-xl p-5 menulink"
+      className="menulink flex max-w-xs flex-col gap-5 rounded-xl p-8"
       href={href}
       rel="noreferrer"
       target={target}
@@ -29,21 +29,20 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Oliverox.Dev</title>
+        <title>Web app development with Oliver Oxenham</title>
       </Head>
-      <div className="m-4">
+      <div className="m-4 flex flex-row-reverse">
         <ThemeSwitcher />
       </div>
       <main className="flex min-h-screen flex-col items-center justify-center">
-        <div className="container flex flex-col items-center justify-center gap-6 px-4 py-16 ">
+        <div className="container flex flex-col items-center justify-center gap-6 px-4 pb-16">
           <Logo />
           <h1 className="text-5xl font-extrabold tracking-tight sm:text-[4em]">
             OliverOx<span className="text-accent">.dev</span>
           </h1>
-          <span className="text-center text-lg">
-            Get your web development needs
-            <br />
-            under control with <Link href="/foundation" className="text-accent underline underline-offset-4">Oliver Oxenham</Link>
+          <span className="text-center font-medium">
+            Web Application Development<br/>
+            with Oliver Oxenham
           </span>
           <HireButton />
           <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 md:gap-8">
@@ -89,6 +88,24 @@ const Home: NextPage = () => {
           </div>
         </div>
       </main>
+      <input type="checkbox" id="hire-modal" className="modal-toggle" />
+      <div className="modal">
+        <div className="modal-box border-2 border-neutral-content">
+          <h3 className="text-xl font-bold">Thank you!</h3>
+          <p className="pt-4">Your interest has been noted.</p>
+          <p className="pt-2">
+            This feature is still under development. For now, please reach out
+            directly to Oliver using one of his social media platforms in the
+            footer.
+          </p>
+          <div className="modal-action">
+            <label htmlFor="hire-modal" className="btn-accent btn">
+              OK
+            </label>
+          </div>
+        </div>
+      </div>
+
       <Footer />
     </>
   );

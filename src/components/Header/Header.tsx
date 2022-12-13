@@ -3,17 +3,12 @@ import Image from "next/image";
 import Logo from "../Logo/Logo";
 import { Fragment } from "react";
 import { useRouter } from "next/router";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { UserIcon } from "@heroicons/react/24/solid";
+import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher";
 
-const user = {
-  name: "Tom Cook",
-  email: "tom@example.com",
-  imageUrl:
-    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-};
 const getNavigation = (pathname: string) => {
   return [
     {
@@ -34,7 +29,6 @@ const getNavigation = (pathname: string) => {
     },
   ];
 };
-const userNavigation = [{ name: "Sign out", href: "#" }];
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
@@ -45,12 +39,12 @@ export default function Header({ h1 = "" }) {
   const { data: session } = useSession();
   const { pathname } = router;
   return (
-    <div className="bg-gray-800 pb-32">
-      <Disclosure as="nav" className="bg-gray-800">
+    <div className="bg-base-300 pb-32">
+      <Disclosure as="nav" className="bg-base-300">
         {({ open }) => (
           <>
             <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-              <div className="border-b border-gray-700">
+              <div className="border-b border-gray-500">
                 <div className="flex h-16 items-center justify-between px-4 sm:px-0">
                   <div className="flex items-center">
                     <div className="w-10">
@@ -66,8 +60,8 @@ export default function Header({ h1 = "" }) {
                             href={item.href}
                             className={classNames(
                               item.current
-                                ? "bg-gray-900 text-white"
-                                : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                                ? "bg-neutral text-primary-content"
+                                : "text-base-content hover:bg-neutral hover:text-primary-content",
                               "rounded-md px-3 py-2 text-sm font-medium"
                             )}
                             aria-current={item.current ? "page" : undefined}
@@ -80,6 +74,8 @@ export default function Header({ h1 = "" }) {
                   </div>
                   <div className="hidden md:block">
                     <div className="ml-4 flex items-center md:ml-6">
+                      <ThemeSwitcher />
+
                       {/* Profile dropdown */}
                       <Menu as="div" className="relative ml-3">
                         <div>
@@ -107,7 +103,7 @@ export default function Header({ h1 = "" }) {
                           leaveFrom="transform opacity-100 scale-100"
                           leaveTo="transform opacity-0 scale-95"
                         >
-                          <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                          <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-base-100 py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                             {session && (
                               <>
                                 <span className="ml-4 text-sm font-semibold">
@@ -119,7 +115,7 @@ export default function Header({ h1 = "" }) {
                             {session && (
                               <Menu.Item>
                                 <Link
-                                  className="block px-4 py-2 text-sm text-gray-700"
+                                  className="block px-4 py-2 text-sm"
                                   href=""
                                   onClick={() => signOut()}
                                 >
@@ -145,7 +141,7 @@ export default function Header({ h1 = "" }) {
                   </div>
                   <div className="-mr-2 flex md:hidden">
                     {/* Mobile menu button */}
-                    <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                    <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-secondary-content hover:bg-gray-700 hover:text-accent-content focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                       <span className="sr-only">Open main menu</span>
                       {open ? (
                         <XMarkIcon
@@ -172,8 +168,8 @@ export default function Header({ h1 = "" }) {
                     href={item.href}
                     className={classNames(
                       item.current
-                        ? "bg-gray-900 text-white"
-                        : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                        ? "bg-gray-900 text-primary-content"
+                        : "text-neutral-content hover:bg-gray-700 hover:text-accent-content",
                       "block rounded-md px-3 py-2 text-base font-medium"
                     )}
                     aria-current={item.current ? "page" : undefined}
@@ -183,8 +179,8 @@ export default function Header({ h1 = "" }) {
                 ))}
               </div>
               <div className="border-t border-gray-700 pt-4 pb-3">
-                <div className="flex items-center px-5">
-                  <div className="flex-shrink-0">
+                <div className="flex items-center justify-between px-5">
+                  <div className="flex flex-row h-8 items-center gap-2">
                     {session && session.user ? (
                       <Image
                         className="h-8 w-8 rounded-full"
@@ -196,16 +192,15 @@ export default function Header({ h1 = "" }) {
                     ) : (
                       <UserIcon className="h-5 w-5 fill-white" />
                     )}
+                    <span className="text-primary-content">{session?.user?.name}</span>
                   </div>
-                  <div className="ml-3 text-base font-medium leading-none text-white">
-                    {session?.user?.name}
-                  </div>
+                  <ThemeSwitcher />
                 </div>
                 <div className="mt-3 space-y-1 px-2">
                   <Link
                     href=""
                     onClick={() => signOut()}
-                    className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
+                    className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-secondary-content"
                   >
                     Sign out
                   </Link>
@@ -217,7 +212,9 @@ export default function Header({ h1 = "" }) {
       </Disclosure>
       <header className="py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold tracking-tight text-white text-center">{h1}</h1>
+          <h1 className="text-center text-3xl font-bold tracking-tight text-base-content">
+            {h1}
+          </h1>
         </div>
       </header>
     </div>
