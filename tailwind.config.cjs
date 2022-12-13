@@ -17,10 +17,13 @@ module.exports = {
           ...require("daisyui/src/colors/themes")["[data-theme=dark]"],
           'base-content': '#ffffff',
           '.menulink': {
+            'box-sizing': 'content-box',
+            'border': '1px solid #334155',
             'background-color': '#334155',
           },
           '.menulink:hover': {
-            'background-color': '#475569'
+            'background-color': '#475569',
+            'border': '1px solid #ffffff'
           }
         },
       },
@@ -29,10 +32,12 @@ module.exports = {
           ...require("daisyui/src/colors/themes")["[data-theme=light]"],
           accent: "#40bfbf",
           '.menulink': {
+            'box-sizing': 'content-box',
+            'border': '1px solid #f1f5f9',
             'background-color': '#f1f5f9',
           },
           '.menulink:hover': {
-            'background-color': '#e2e8f0'
+            'background-color': '#e2e8f0',
           }
         },
       },
