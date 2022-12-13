@@ -42,7 +42,7 @@ function classNames(...classes: any) {
 
 export default function Header({ h1 = "" }) {
   const router = useRouter();
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
   const { pathname } = router;
   return (
     <div className="bg-gray-800 pb-32">
@@ -217,7 +217,7 @@ export default function Header({ h1 = "" }) {
       </Disclosure>
       <header className="py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold tracking-tight text-white">{h1}</h1>
+          <h1 className="text-3xl font-bold tracking-tight text-white text-center">{h1}</h1>
         </div>
       </header>
     </div>

@@ -15,7 +15,7 @@ module.exports = {
       {
         light: {
           ...require("daisyui/src/colors/themes")["[data-theme=light]"],
-          accent: "#00ced1",
+          accent: "#26d9d9",
         },
       },
     ],

@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { type NextPage } from "next";
 import Layout from "../components/Layout/Layout";
+import HireButton from '../components/HireButton/HireButton';
 
 const Foundation: NextPage = () => {
   return (
@@ -12,8 +13,8 @@ const Foundation: NextPage = () => {
       {/* <main className="max-w prose mx-auto -mt-32 max-w-4xl rounded-lg bg-white"> */}
       <main className="-mt-32">
         <div className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
-          <article className="prose mx-auto rounded-lg bg-white px-5 py-6 shadow sm:px-6">
-            <blockquote className="border-0 text-center text-xl">
+          <article className="prose mx-auto rounded-lg bg-white px-5 py-12 shadow sm:px-6">
+            <blockquote className="border-0 text-center text-xl -ml-8">
               <p>
                 Truthfulness is the foundation
                 <br />
@@ -58,6 +59,30 @@ const Foundation: NextPage = () => {
               in a very short time. He is a quick learner and aims to launch his
               projects in the shortest time possible with the best quality.
             </p>
+            <p>
+              Oliver works as a freelance software developer on{" "}
+              <Link
+                className="underline underline-offset-4"
+                href="https://www.toptal.com/60VA4e/worlds-top-talent"
+                target="_blank"
+              >
+                Toptal
+              </Link>
+              , an exclusive network of the top freelance software developers.
+              Toptal is reknown for hiring fewer than the top 3% of the
+              thousands of applications it receives each month. If you are a
+              company or startup looking to hire a top talent, Oliver highly
+              recommends you consider{" "}
+              <Link
+                className="underline underline-offset-4"
+                href="https://www.toptal.com/60VA4e/worlds-top-talent"
+                target="_blank"
+              >
+                hiring them from Toptal
+              </Link>{" "}
+              for your peace of mind and assured quality.
+            </p>
+            <div className="flex justify-center mt-12"><HireButton /></div>
           </article>
         </div>
       </main>

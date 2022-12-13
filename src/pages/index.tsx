@@ -9,6 +9,7 @@ import {
 } from "@heroicons/react/24/solid";
 import Logo from "../components/Logo/Logo";
 import Footer from "../components/Footer/Footer";
+import HireButton from '../components/HireButton/HireButton';
 
 const MenuLink = ({ href, target = "_self", children }: any) => {
   return (
@@ -33,13 +34,14 @@ const Home: NextPage = () => {
         <div className="container flex flex-col items-center justify-center gap-6 px-4 py-16 ">
           <Logo />
           <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[4em]">
-            OliverOx<span className="text-[#4ee4fc]">.dev</span>
+            OliverOx<span className="text-accent">.dev</span>
           </h1>
           <span className="text-center text-lg text-white">
             Get your web development needs
             <br />
-            under control with <span className="text-[#4ee4fc]">Oliver Oxenham</span>
+            under control with <Link href="/foundation" className="text-accent underline underline-offset-4">Oliver Oxenham</Link>
           </span>
+          <HireButton />
           <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 md:gap-8">
             <MenuLink href="/foundation">
               <div className="fx-row flex items-center space-x-2">
