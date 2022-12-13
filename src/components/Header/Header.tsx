@@ -3,7 +3,7 @@ import Image from "next/image";
 import Logo from "../Logo/Logo";
 import { Fragment } from "react";
 import { useRouter } from "next/router";
-import { signOut, useSession } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { UserIcon } from "@heroicons/react/24/solid";
@@ -178,9 +178,9 @@ export default function Header({ h1 = "" }) {
                   </Link>
                 ))}
               </div>
-              <div className="border-t border-neutral pt-4 pb-3">
+              <div className="border-t border-gray-500 pt-4 pb-3">
                 <div className="flex items-center justify-between px-5">
-                  <div className="flex flex-row h-8 items-center gap-2">
+                  <div className="flex h-8 flex-row items-center gap-2">
                     {session && session.user ? (
                       <Image
                         className="h-8 w-8 rounded-full"
@@ -190,21 +190,31 @@ export default function Header({ h1 = "" }) {
                         height={32}
                       />
                     ) : (
-                      <UserIcon className="h-5 w-5 fill-base-100" />
+                      <Link
+                        href=""
+                        onClick={() => signIn()}
+                        className="block rounded-md py-2 font-medium text-base-content hover:bg-neutral hover:text-secondary-content"
+                      >
+                        Sign in
+                      </Link>
                     )}
-                    <span className="text-base-content">{session?.user?.name}</span>
+                    <span className="text-base-content">
+                      {session?.user?.name}
+                    </span>
                   </div>
                   <ThemeSwitcher />
                 </div>
-                <div className="mt-3 space-y-1 px-2">
-                  <Link
-                    href=""
-                    onClick={() => signOut()}
-                    className="block rounded-md px-3 py-2 text-base-content font-medium hover:bg-neutral hover:text-secondary-content"
-                  >
-                    Sign out
-                  </Link>
-                </div>
+                {(session && session.user) && (
+                  <div className="mt-3 space-y-1 px-2">
+                    <Link
+                      href=""
+                      onClick={() => signOut()}
+                      className="block rounded-md px-3 py-2 font-medium text-base-content hover:bg-neutral hover:text-secondary-content"
+                    >
+                      Sign out
+                    </Link>
+                  </div>
+                )}
               </div>
             </Disclosure.Panel>
           </>
