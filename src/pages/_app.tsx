@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { type AppType } from "next/app";
 import { type Session } from "next-auth";
 import { trpc } from "../utils/trpc";
@@ -12,18 +13,9 @@ const MyApp: AppType<{ session: Session | null }> = ({
   pageProps: { session, ...pageProps },
 }) => {
   const router = useRouter();
-  const getBgColor = () => {
-    if (router.pathname === "/guestbook") {
-      return "bg-gray-200";
-    } else if (router.pathname === "/") {
-      return "background-animate bg-gradient-to-r from-[#1F2937] via-[#182945] to-[#1F2937]";
-    } else {
-      return "bg-gray-800";
-    }
-  };
   return (
     <SessionProvider session={session}>
-      <div className={`min-h-screen ${getBgColor()}`}>
+      <div className="min-h-screen">
         <Component {...pageProps} />
         {process.env.NODE_ENV === "production" && <Analytics />}
       </div>

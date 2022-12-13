@@ -10,11 +10,12 @@ import {
 import Logo from "../components/Logo/Logo";
 import Footer from "../components/Footer/Footer";
 import HireButton from '../components/HireButton/HireButton';
+import ThemeSwitcher from '../components/ThemeSwitcher/ThemeSwitcher';
 
 const MenuLink = ({ href, target = "_self", children }: any) => {
   return (
     <Link
-      className="flex max-w-xs flex-col gap-5 rounded-xl bg-white/10 p-5 text-white hover:bg-white/20"
+      className="flex max-w-xs flex-col gap-5 rounded-xl p-5 menulink"
       href={href}
       rel="noreferrer"
       target={target}
@@ -30,13 +31,16 @@ const Home: NextPage = () => {
       <Head>
         <title>Oliverox.Dev</title>
       </Head>
+      <div className="m-4">
+        <ThemeSwitcher />
+      </div>
       <main className="flex min-h-screen flex-col items-center justify-center">
         <div className="container flex flex-col items-center justify-center gap-6 px-4 py-16 ">
           <Logo />
-          <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[4em]">
+          <h1 className="text-5xl font-extrabold tracking-tight sm:text-[4em]">
             OliverOx<span className="text-accent">.dev</span>
           </h1>
-          <span className="text-center text-lg text-white">
+          <span className="text-center text-lg">
             Get your web development needs
             <br />
             under control with <Link href="/foundation" className="text-accent underline underline-offset-4">Oliver Oxenham</Link>
