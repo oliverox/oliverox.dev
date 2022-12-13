@@ -141,7 +141,7 @@ export default function Header({ h1 = "" }) {
                   </div>
                   <div className="-mr-2 flex md:hidden">
                     {/* Mobile menu button */}
-                    <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-secondary-content hover:bg-gray-700 hover:text-accent-content focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                    <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-base-300 p-2 text-base-content hover:text-accent-content focus:outline-none">
                       <span className="sr-only">Open main menu</span>
                       {open ? (
                         <XMarkIcon
@@ -160,7 +160,7 @@ export default function Header({ h1 = "" }) {
               </div>
             </div>
 
-            <Disclosure.Panel className="absolute top-[65px] z-10 w-full border-b border-gray-700 bg-gray-800 md:hidden">
+            <Disclosure.Panel className="absolute top-[65px] z-10 w-full border-b border-neutral bg-base-300 md:hidden">
               <div className="space-y-1 px-2 py-3 sm:px-3">
                 {getNavigation(pathname).map((item) => (
                   <Link
@@ -168,8 +168,8 @@ export default function Header({ h1 = "" }) {
                     href={item.href}
                     className={classNames(
                       item.current
-                        ? "bg-gray-900 text-primary-content"
-                        : "text-neutral-content hover:bg-gray-700 hover:text-accent-content",
+                        ? "bg-neutral-focus text-primary-content"
+                        : "text-base-content hover:bg-neutral hover:text-secondary-content",
                       "block rounded-md px-3 py-2 text-base font-medium"
                     )}
                     aria-current={item.current ? "page" : undefined}
@@ -178,7 +178,7 @@ export default function Header({ h1 = "" }) {
                   </Link>
                 ))}
               </div>
-              <div className="border-t border-gray-700 pt-4 pb-3">
+              <div className="border-t border-neutral pt-4 pb-3">
                 <div className="flex items-center justify-between px-5">
                   <div className="flex flex-row h-8 items-center gap-2">
                     {session && session.user ? (
@@ -190,9 +190,9 @@ export default function Header({ h1 = "" }) {
                         height={32}
                       />
                     ) : (
-                      <UserIcon className="h-5 w-5 fill-white" />
+                      <UserIcon className="h-5 w-5 fill-base-100" />
                     )}
-                    <span className="text-primary-content">{session?.user?.name}</span>
+                    <span className="text-base-content">{session?.user?.name}</span>
                   </div>
                   <ThemeSwitcher />
                 </div>
@@ -200,7 +200,7 @@ export default function Header({ h1 = "" }) {
                   <Link
                     href=""
                     onClick={() => signOut()}
-                    className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-secondary-content"
+                    className="block rounded-md px-3 py-2 text-base-content font-medium hover:bg-neutral hover:text-secondary-content"
                   >
                     Sign out
                   </Link>
