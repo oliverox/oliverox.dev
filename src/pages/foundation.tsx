@@ -14,29 +14,25 @@ const Foundation: NextPage = () => {
       <main className="">
         <div className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
           <article className="prose mx-auto rounded-lg border-2 border-neutral-content bg-base-100 px-5 py-12 pb-20 text-base-content shadow sm:px-6">
-            <blockquote className="-ml-8 border-0 text-center text-xl">
-              <p>
-                Truthfulness is the foundation
-                <br />
-                of all human virtues.
-              </p>
-              <span className="text-xs italic text-gray-300">
-                -{" "}
-                <Link
-                  href="https://www.bahai.org/abdul-baha"
-                  target="_blank"
-                  className="underline underline-offset-4"
-                >
-                  ‘Abdu’l-Bahá
-                </Link>
-              </span>
+            <blockquote className="-ml-8 border-0 text-center text-lg">
+              Truthfulness is the foundation
+              <br />
+              of all human virtues.
+              <br />
+              <Link
+                className="text-xs italic underline underline-offset-4"
+                href="https://www.bahai.org/abdul-baha"
+                target="_blank"
+              >
+                ‘Abdu’l-Bahá
+              </Link>
             </blockquote>
 
             <p>
               Known for delivering world-class, full stack web application
               solutions, Oliver, a 15-year veteran in the software development
               industry, now provides his services to any startup or business
-              requiring web application development. Oliver's software was{" "}
+              requiring web application development. Oliver&apos;s software was{" "}
               <Link
                 className="underline underline-offset-4"
                 href="https://techcrunch.com/2012/03/08/ebays-stubhub-acquires-peekspy-to-add-3d-map-views-for-venues/"

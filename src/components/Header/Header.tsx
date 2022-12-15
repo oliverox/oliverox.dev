@@ -34,7 +34,7 @@ function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Header({ h1 = "" }) {
+export default function Header() {
   const router = useRouter();
   const { data: session } = useSession();
   const { pathname } = router;
