@@ -13,7 +13,7 @@ const Foundation: NextPage = () => {
       {/* <main className="max-w prose mx-auto -mt-32 max-w-4xl rounded-lg bg-white"> */}
       <main className="-mt-32">
         <div className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
-          <article className="prose mx-auto rounded-lg border-neutral-content border-2 bg-base-100 px-5 py-12 shadow sm:px-6 pb-20 text-base-content">
+          <article className="prose mx-auto rounded-lg border-2 border-neutral-content bg-base-100 px-5 py-12 pb-20 text-base-content shadow sm:px-6">
             <blockquote className="-ml-8 border-0 text-center text-xl">
               <p>
                 Truthfulness is the foundation
@@ -33,8 +33,10 @@ const Foundation: NextPage = () => {
             </blockquote>
 
             <p>
-              Oliver is known for delivering world-class, full stack web apps.
-              In fact, his software was{" "}
+              Known for delivering world-class, full stack web application
+              solutions, Oliver, a 15-year veteran in the software development
+              industry, now provides his services to any startup or business
+              requiring web application development. Oliver's software was{" "}
               <Link
                 className="underline underline-offset-4"
                 href="https://techcrunch.com/2012/03/08/ebays-stubhub-acquires-peekspy-to-add-3d-map-views-for-venues/"
@@ -42,17 +44,17 @@ const Foundation: NextPage = () => {
               >
                 acquired by eBay in 2012
               </Link>
-              . He works closely with his clients, striving to fully understand
-              their needs and requirements. He works systematically and
-              iteratively always with constant, truthful communication with his
-              clients. His experience with bootstrapping a startup from scratch,
-              growing it and taking it through an acquisition process gives him
-              a unique edge with working with clients with tight budgets while
-              still needing to deliver a first-class experience.
+              . He strives to work closely with his clients in order to fully
+              understand their needs and requirements. He is systematic and
+              works iteratively, always with constant, truthful communication.
+              His experience with bootstrapping a startup from scratch, growing
+              it and taking it through an acquisition process gives him a unique
+              edge with working with clients with tight budgets while still
+              needing to deliver a first-class experience.
             </p>
             <p>
-              To do so, Oliver usually opts to build his web apps on top of
-              Serverless platforms to support their backend needs. Oliver
+              To do so, Oliver usually opts to build his web applications on top
+              of Serverless platforms to support their backend needs. Oliver
               iterates quickly when building web apps with React and TailwindCSS
               on the frontend. If you have a Figma design ready, Oliver enjoys
               the challenge of turning it into a componentized pixel-perfect app
