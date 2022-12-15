@@ -31,17 +31,20 @@ const Home: NextPage = () => {
       <Head>
         <title>Web app development with Oliver Oxenham</title>
       </Head>
-      <div className="m-4 flex flex-row-reverse">
+      <div className="p-4 flex flex-row-reverse bg-accent">
         <ThemeSwitcher />
       </div>
-      <main className="flex min-h-screen flex-col items-center justify-center">
+      <div className="bg-gradient-to-t from-neutral-content to-accent w-full h-[500px]"></div>
+      {/* <svg className="bg-gradient-to-t from-white to-accent fill-transparent w-full" width="1600" height="595" viewBox="0 0 1600 595" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 338L53.3 349.2C106.7 360.3 213.3 382.7 320 393.8C426.7 405 533.3 405 640 359.3C746.7 313.7 853.3 222.3 960 189.2C1066.7 156 1173.3 181 1280 159.2C1386.7 137.3 1493.3 68.7 1546.7 34.3L1600 0V595H1546.7C1493.3 595 1386.7 595 1280 595C1173.3 595 1066.7 595 960 595C853.3 595 746.7 595 640 595C533.3 595 426.7 595 320 595C213.3 595 106.7 595 53.3 595H0V338Z"></path></svg> */}
+      <main className="flex min-h-screen flex-col items-center justify-center -mt-[510px]">
         <div className="container flex flex-col items-center justify-center gap-6 px-4 pb-16">
-          <Logo />
+          <Logo leftCircleColor="" rightCircleColor="neutral" />
           <h1 className="text-5xl font-extrabold tracking-tight sm:text-[4em]">
-            OliverOx<span className="text-accent">.dev</span>
+            OliverOx<span className="text-neutral-content">.dev</span>
           </h1>
           <span className="text-center font-medium">
-            Web Application Development<br/>
+            Web Application Development
+            <br />
             with Oliver Oxenham
           </span>
           <HireButton />
@@ -105,7 +108,6 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-
       <Footer />
     </>
   );

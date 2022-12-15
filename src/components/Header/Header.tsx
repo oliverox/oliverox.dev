@@ -39,12 +39,13 @@ export default function Header({ h1 = "" }) {
   const { data: session } = useSession();
   const { pathname } = router;
   return (
-    <div className="bg-base-300 pb-32">
-      <Disclosure as="nav" className="bg-base-300">
+    // <div className="bg-gradient-to-t from-neutral-content to-accent pb-32">
+    <div>
+      <Disclosure as="nav" className="bg-accent">
         {({ open }) => (
-          <>
+          <div className="bg-gradient-to-t from-neutral-content to-accent pb-64">
             <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-              <div className="border-b border-gray-500">
+              <div>
                 <div className="flex h-16 items-center justify-between px-4 sm:px-0">
                   <div className="flex items-center">
                     <div className="w-10">
@@ -79,7 +80,7 @@ export default function Header({ h1 = "" }) {
                       {/* Profile dropdown */}
                       <Menu as="div" className="relative ml-3">
                         <div>
-                          <Menu.Button className="flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                          <Menu.Button className="flex max-w-xs items-center rounded-full p-1 bg-neutral-content text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                             <span className="sr-only">Open user menu</span>
                             {session && session.user ? (
                               <Image
@@ -90,7 +91,7 @@ export default function Header({ h1 = "" }) {
                                 height={32}
                               />
                             ) : (
-                              <UserIcon className="h-5 w-5 fill-white" />
+                              <UserIcon className="h-5 w-5 fill-neutral" />
                             )}
                           </Menu.Button>
                         </div>
@@ -126,7 +127,7 @@ export default function Header({ h1 = "" }) {
                             {!session && (
                               <Menu.Item>
                                 <Link
-                                  className="block px-4 py-2 text-sm text-gray-700"
+                                  className="block px-4 py-2 text-sm"
                                   href=""
                                   onClick={() => signOut()}
                                 >
@@ -217,16 +218,16 @@ export default function Header({ h1 = "" }) {
                 )}
               </div>
             </Disclosure.Panel>
-          </>
+          </div>
         )}
       </Disclosure>
-      <header className="py-10">
+      {/* <header className="-my-[80px]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h1 className="text-center text-3xl font-bold tracking-tight text-base-content">
             {h1}
           </h1>
         </div>
-      </header>
+      </header> */}
     </div>
   );
 }

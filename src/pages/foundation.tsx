@@ -11,7 +11,7 @@ const Foundation: NextPage = () => {
         <title>Foundation</title>
       </Head>
       {/* <main className="max-w prose mx-auto -mt-32 max-w-4xl rounded-lg bg-white"> */}
-      <main className="-mt-32">
+      <main className="">
         <div className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
           <article className="prose mx-auto rounded-lg border-2 border-neutral-content bg-base-100 px-5 py-12 pb-20 text-base-content shadow sm:px-6">
             <blockquote className="-ml-8 border-0 text-center text-xl">

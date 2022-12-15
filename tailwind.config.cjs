@@ -33,11 +33,12 @@ module.exports = {
           accent: "#40bfbf",
           '.menulink': {
             'box-sizing': 'content-box',
-            'border': '1px solid #f1f5f9',
-            'background-color': '#f1f5f9',
+            'border': '2px solid #1f2937',
+            'background-color': '#ffffff',
           },
           '.menulink:hover': {
-            'background-color': '#e2e8f0',
+            'border': '2px solid #1f2937',
+            'background-color': '#5dbebe6e',
           }
         },
       },

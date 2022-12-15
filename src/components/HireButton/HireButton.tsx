@@ -1,6 +1,6 @@
 export default function HireButton() {
   return (
-    <label htmlFor="hire-modal" className="btn-accent btn-lg btn">
+    <label htmlFor="hire-modal" className="btn-neutral btn-lg btn">
       Hire Oliver →
     </label>
   );
