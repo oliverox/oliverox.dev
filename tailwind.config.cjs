@@ -38,6 +38,7 @@ module.exports = {
           },
           '.menulink:hover': {
             'background-color': '#e2e8f0',
+            'border': '1px solid #475569',
           }
         },
       },

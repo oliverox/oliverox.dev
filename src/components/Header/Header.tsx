@@ -79,18 +79,21 @@ export default function Header({ h1 = "" }) {
                       {/* Profile dropdown */}
                       <Menu as="div" className="relative ml-3">
                         <div>
-                          <Menu.Button className="flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                          <Menu.Button
+                            className="flex max-w-xs items-center rounded-full bg-neutral-content
+                                      border-neutral-focus border-2 p-[2px] text-sm"
+                          >
                             <span className="sr-only">Open user menu</span>
                             {session && session.user ? (
                               <Image
-                                className="h-8 w-8 rounded-full"
+                                className="h-6 w-6 rounded-full"
                                 src={session.user.image || ""}
                                 alt=""
                                 width={32}
                                 height={32}
                               />
                             ) : (
-                              <UserIcon className="h-5 w-5 fill-white" />
+                              <UserIcon className="h-5 w-5 fill-base-content" />
                             )}
                           </Menu.Button>
                         </div>
@@ -103,7 +106,11 @@ export default function Header({ h1 = "" }) {
                           leaveFrom="transform opacity-100 scale-100"
                           leaveTo="transform opacity-0 scale-95"
                         >
-                          <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-base-100 py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                          <Menu.Items
+                            className="absolute right-0 z-10 mt-2 w-48 origin-top-right 
+                                      rounded-md bg-base-100 py-1 shadow-lg ring-1 
+                                    ring-black ring-opacity-5 focus:outline-none"
+                          >
                             {session && (
                               <>
                                 <span className="ml-4 text-sm font-semibold">
@@ -126,9 +133,9 @@ export default function Header({ h1 = "" }) {
                             {!session && (
                               <Menu.Item>
                                 <Link
-                                  className="block px-4 py-2 text-sm text-gray-700"
+                                  className="block px-4 py-2 text-sm text-base-content"
                                   href=""
-                                  onClick={() => signOut()}
+                                  onClick={() => signIn('google')}
                                 >
                                   Sign in
                                 </Link>
@@ -204,7 +211,7 @@ export default function Header({ h1 = "" }) {
                   </div>
                   <ThemeSwitcher />
                 </div>
-                {(session && session.user) && (
+                {session && session.user && (
                   <div className="mt-3 space-y-1 px-2">
                     <Link
                       href=""
