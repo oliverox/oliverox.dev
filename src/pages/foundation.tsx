@@ -36,7 +36,7 @@ const Foundation: NextPage = () => {
               Known for delivering world-class, full stack web application
               solutions, Oliver, a 15-year veteran in the software development
               industry, now provides his services to any startup or business
-              requiring web application development. Oliver's software was{" "}
+              requiring web application development. Oliver&apos;s software was{" "}
               <Link
                 className="underline underline-offset-4"
                 href="https://techcrunch.com/2012/03/08/ebays-stubhub-acquires-peekspy-to-add-3d-map-views-for-venues/"

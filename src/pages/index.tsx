@@ -12,7 +12,17 @@ import Footer from "../components/Footer/Footer";
 import HireButton from "../components/HireButton/HireButton";
 import ThemeSwitcher from "../components/ThemeSwitcher/ThemeSwitcher";
 
-const MenuLink = ({ href, target = "_self", children }: any) => {
+type MenuLinkProps = {
+  href: string,
+  target?: "_self" | "_blank" | "_parent" | "_top",
+  children: React.ReactNode
+};
+
+const MenuLink: React.FC<MenuLinkProps> = ({
+  href,
+  target = "_self",
+  children,
+}) => {
   return (
     <Link
       className="menulink flex max-w-xs flex-col gap-5 rounded-xl p-8"
@@ -41,7 +51,8 @@ const Home: NextPage = () => {
             OliverOx<span className="text-accent">.dev</span>
           </h1>
           <span className="text-center font-medium">
-            Web Application Development<br/>
+            Web Application Development
+            <br />
             with Oliver Oxenham
           </span>
           <HireButton />

@@ -30,11 +30,11 @@ const getNavigation = (pathname: string) => {
   ];
 };
 
-function classNames(...classes: any) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Header({ h1 = "" }) {
+export default function Header({ h1 = "" }: { h1: string }) {
   const router = useRouter();
   const { data: session } = useSession();
   const { pathname } = router;
@@ -80,8 +80,8 @@ export default function Header({ h1 = "" }) {
                       <Menu as="div" className="relative ml-3">
                         <div>
                           <Menu.Button
-                            className="flex max-w-xs items-center rounded-full bg-neutral-content
-                                      border-neutral-focus border-2 p-[2px] text-sm"
+                            className="flex max-w-xs items-center rounded-full border-2
+                                      border-neutral-focus bg-neutral-content p-[2px] text-sm"
                           >
                             <span className="sr-only">Open user menu</span>
                             {session && session.user ? (
@@ -135,7 +135,7 @@ export default function Header({ h1 = "" }) {
                                 <Link
                                   className="block px-4 py-2 text-sm text-base-content"
                                   href=""
-                                  onClick={() => signIn('google')}
+                                  onClick={() => signIn("google")}
                                 >
                                   Sign in
                                 </Link>
