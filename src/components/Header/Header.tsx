@@ -60,7 +60,7 @@ export default function Header({ h1 = "" }: { h1: string }) {
                             href={item.href}
                             className={classNames(
                               item.current
-                                ? "bg-neutral text-primary-content"
+                                ? "bg-accent text-accent-content"
                                 : "text-base-content hover:bg-neutral hover:text-primary-content",
                               "rounded-md px-3 py-2 text-sm font-medium"
                             )}

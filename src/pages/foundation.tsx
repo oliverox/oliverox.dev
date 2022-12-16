@@ -2,7 +2,6 @@ import Head from "next/head";
 import Link from "next/link";
 import { type NextPage } from "next";
 import Layout from "../components/Layout/Layout";
-import HireButton from "../components/HireButton/HireButton";
 
 const Foundation: NextPage = () => {
   return (
@@ -21,7 +20,7 @@ const Foundation: NextPage = () => {
               <Link
                 href="https://www.bahai.org/abdul-baha"
                 target="_blank"
-                className="text-xs italic text-neutral underline underline-offset-4"
+                className="text-xs italic text-neutral underline-offset-4"
               >
                 ‘Abdu’l-Bahá
               </Link>
@@ -33,7 +32,7 @@ const Foundation: NextPage = () => {
               industry, now provides his services to any startup or business
               requiring web application development. Oliver&apos;s software was{" "}
               <Link
-                className="underline underline-offset-4"
+                className="underline-offset-4"
                 href="https://techcrunch.com/2012/03/08/ebays-stubhub-acquires-peekspy-to-add-3d-map-views-for-venues/"
                 target="_blank"
               >
@@ -59,7 +58,7 @@ const Foundation: NextPage = () => {
             <p>
               Oliver works as a freelance software developer on{" "}
               <Link
-                className="underline underline-offset-4"
+                className="underline-offset-4"
                 href="https://www.toptal.com/60VA4e/worlds-top-talent"
                 target="_blank"
               >
@@ -71,7 +70,7 @@ const Foundation: NextPage = () => {
               company or startup looking to hire a top talent, Oliver highly
               recommends you consider{" "}
               <Link
-                className="underline underline-offset-4"
+                className="underline-offset-4"
                 href="https://www.toptal.com/60VA4e/worlds-top-talent"
                 target="_blank"
               >
