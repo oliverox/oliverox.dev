@@ -38,7 +38,7 @@ export default function Messages() {
               <p>{msg.message}</p>
               <div className={chatTextClasses.join(" ")}>
                 <span className="text-[11px] italic capitalize">{msg.name}</span>
-                <span className="text-[10px] text-secondary-content">
+                <span className="text-[10px] italic">
                   {msg.createdAt.toDateString()}
                 </span>
               </div>
