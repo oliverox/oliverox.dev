@@ -22,7 +22,7 @@ export default function Messages() {
     <div className="mx-auto mt-5 flex max-w-lg flex-col gap-4">
       {messages?.map((msg: msgType, index: number) => {
         const chatContainerClasses = ["chat", "basis-full"];
-        const chatBubbleClasses = ["chat-bubble", "mx-auto", "p-4", "w-full", "lg:w-5/6", "drop-shadow-md"];
+        const chatBubbleClasses = ["chat-bubble", "mx-auto", "lg:w-5/6", "drop-shadow-md"];
         const chatTextClasses = ["mt-2", "flex", "flex-col"];
         if (msg.name === "Oliver Oxenham") {
           chatContainerClasses.push("chat-end");
@@ -38,7 +38,7 @@ export default function Messages() {
               <p>{msg.message}</p>
               <div className={chatTextClasses.join(" ")}>
                 <span className="text-[11px] italic capitalize">{msg.name}</span>
-                <span className="text-[10px] text-gray-500">
+                <span className="text-[10px] text-secondary-content">
                   {msg.createdAt.toDateString()}
                 </span>
               </div>

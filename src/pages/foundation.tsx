@@ -10,7 +10,6 @@ const Foundation: NextPage = () => {
       <Head>
         <title>Foundation</title>
       </Head>
-      {/* <main className="max-w prose mx-auto -mt-32 max-w-4xl rounded-lg bg-white"> */}
       <main className="-mt-32">
         <div className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
           <article className="prose mx-auto rounded-lg border-2 border-neutral-content bg-base-100 px-5 py-12 pb-20 text-base-content shadow sm:px-6">
@@ -81,7 +80,9 @@ const Foundation: NextPage = () => {
               for your peace of mind and assured quality.
             </p>
             <div className="mt-12 flex justify-center">
-              <HireButton />
+              <Link href="/projects" className="btn-accent btn">
+                Next →
+              </Link>
             </div>
           </article>
         </div>

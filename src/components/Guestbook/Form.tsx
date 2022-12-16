@@ -42,7 +42,7 @@ export default function Form() {
         minLength={2}
         maxLength={100}
         onChange={(event) => setMessage(event.target.value)}
-        className="text-sm bg-neutral-900 rounded-md border-2 border-neutral px-4 py-2 focus:outline-none flex-grow"
+        className="text-sm bg-neutral-content placeholder:text-neutral rounded-md border-2 border-neutral px-4 py-2 focus:outline-none flex-grow focus:bg-white"
       />
       <button
         type="submit"
