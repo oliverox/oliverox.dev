@@ -15,21 +15,17 @@ const Foundation: NextPage = () => {
         <div className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
           <article className="prose mx-auto rounded-lg border-2 border-neutral-content bg-base-100 px-5 py-12 pb-20 text-base-content shadow sm:px-6">
             <blockquote className="-ml-8 border-0 text-center text-xl">
-              <p>
-                Truthfulness is the foundation
-                <br />
-                of all human virtues.
-              </p>
-              <span className="text-xs italic text-gray-300">
-                -{" "}
-                <Link
-                  href="https://www.bahai.org/abdul-baha"
-                  target="_blank"
-                  className="underline underline-offset-4"
-                >
-                  ‘Abdu’l-Bahá
-                </Link>
-              </span>
+              Truthfulness is the foundation
+              <br />
+              of all human virtues.
+              <br />
+              <Link
+                href="https://www.bahai.org/abdul-baha"
+                target="_blank"
+                className="text-xs italic text-neutral underline underline-offset-4"
+              >
+                ‘Abdu’l-Bahá
+              </Link>
             </blockquote>
 
             <p>
