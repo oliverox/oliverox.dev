@@ -22,10 +22,10 @@ const TechStack: NextPage = () => {
             <p>
               Imagine a tech stack allowing you to code both the frontend and
               backend in one language. Now, imagine if you made a breaking
-              change to your backend API, wouldn't it be nice if this change was
+              change to your backend API, wouldn&apos;t it be nice if this change was
               highlighted in the frontend code calling that API? Even better,
               what if you added a column to your table in your database?
-              Wouldn't it be cool if your frontend code showed you where to
+              Wouldn&apos;t it be cool if your frontend code showed you where to
               update the mismatched data?
             </p>
             <p>
