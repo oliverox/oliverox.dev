@@ -60,7 +60,7 @@ const Home: NextPage = () => {
             <MenuLink href="/foundation">
               <div className="fx-row flex items-center space-x-2">
                 <HeartIcon className="h-6 w-6" />
-                <h3 className="text-2xl font-bold">Foundation →</h3>
+                <h1 className="text-2xl font-bold">Foundation →</h1>
               </div>
               <div className="text-lg">
                 Find out more about Oliver, and why you can trust him with your
@@ -70,7 +70,7 @@ const Home: NextPage = () => {
             <MenuLink href="/projects">
               <div className="fx-row flex items-center space-x-2">
                 <CodeBracketSquareIcon className="h-6 w-6" />
-                <h3 className="text-2xl font-bold">Projects →</h3>
+                <h1 className="text-2xl font-bold">Projects →</h1>
               </div>
               <div className="text-lg">
                 Learn about various projects Oliver has built over the years and
@@ -80,7 +80,7 @@ const Home: NextPage = () => {
             <MenuLink href="/techstack">
               <div className="flex flex-row items-center space-x-2">
                 <Square3Stack3DIcon className="h-6 w-6" />
-                <h3 className="text-2xl font-bold">Tech Stack →</h3>
+                <h1 className="text-2xl font-bold">Tech Stack →</h1>
               </div>
               <div className="text-lg">
                 Glance into Oliver&apos;s favorite tech stack for quickly
@@ -90,7 +90,7 @@ const Home: NextPage = () => {
             <MenuLink href="/guestbook">
               <div className="flex flex-row items-center space-x-2">
                 <BookOpenIcon className="h-6 w-6" />
-                <h3 className="text-2xl font-bold">Guestbook →</h3>
+                <h1 className="text-2xl font-bold">Guestbook →</h1>
               </div>
               <div className="text-lg">
                 Don&apos;t be shy! Let Oliver know you dropped by.
@@ -102,7 +102,7 @@ const Home: NextPage = () => {
       <input type="checkbox" id="hire-modal" className="modal-toggle" />
       <div className="modal">
         <div className="modal-box border-2 border-neutral-content">
-          <h3 className="text-xl font-bold">Thank you!</h3>
+          <h1 className="text-xl font-bold">Thank you!</h1>
           <p className="pt-4">Your interest has been noted.</p>
           <p className="pt-2">
             This feature is still under development. For now, please reach out

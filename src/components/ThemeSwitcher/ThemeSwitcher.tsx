@@ -10,6 +10,7 @@ export default function ThemeSwitcher() {
   return (
     <div className="btn-group">
       <button
+        aria-label="Dark theme"
         data-set-theme="dark"
         data-act-class="btn-accent"
         className="btn btn-sm"
@@ -17,6 +18,7 @@ export default function ThemeSwitcher() {
         <MoonIcon title="Dark theme" className="h-4 w-4" />
       </button>
       <button
+        aria-label="Light theme"
         data-act-class="btn-accent"
         data-set-theme="light"
         className="btn btn-sm"

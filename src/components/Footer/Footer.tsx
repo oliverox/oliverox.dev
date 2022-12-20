@@ -6,6 +6,7 @@ export default function Footer() {
     <footer className="mx-auto max-w-7xl py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
       <div className="flex justify-center space-x-6 md:order-2">
         <Link
+          aria-label="Visit Oliver's Twitter account"
           href="https://twitter.com/oliveroxenham"
           target="_blank"
           rel="noreferrer"
@@ -20,6 +21,7 @@ export default function Footer() {
           </svg>
         </Link>
         <Link
+          aria-label="Visit Oliver's LinkedIn account"
           href="https://mu.linkedin.com/in/oliver-oxenham-a33696"
           target="_blank"
           rel="noreferrer"
@@ -34,6 +36,7 @@ export default function Footer() {
           </svg>
         </Link>
         <Link
+          aria-label="Visit Oliver's github account"
           href="https://github.com/oliverox"
           target="_blank"
           rel="noreferrer"
@@ -47,6 +50,7 @@ export default function Footer() {
           </svg>
         </Link>
         <Link
+          aria-label="Message Oliver on Telegram"
           href="https://t.me/oliverox"
           target="_blank"
           rel="noreferrer"
