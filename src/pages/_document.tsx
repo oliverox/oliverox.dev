@@ -6,9 +6,10 @@ export default function Document() {
       <Head>
         <meta name="twitter:card" content="summary"></meta>
         <meta name="twitter:creator" content="@oliveroxenham" />
+        <meta name="description" content="Hire Oliver Oxenham to handle all your web application development needs." />
         <meta property="og:url" content="https://www.oliverox.dev" />
         <meta property="og:title" content="OliverOx.dev" />
-        <meta property="og:description" content="Get your web development needs under control with Oliver Oxenham." />
+        <meta property="og:description" content="Hire Oliver Oxenham to handle all your web application development needs." />
         <meta property="og:image" content="https://www.oliverox.dev/logo.png" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
