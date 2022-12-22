@@ -12,7 +12,6 @@ export default function Document() {
         <meta property="og:description" content="Hire Oliver Oxenham to handle all your web application development needs." />
         <meta property="og:image" content="https://www.oliverox.dev/logo.png" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
       </Head>
       <body className="min-h-screen">
         <Main />

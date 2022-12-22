@@ -4,6 +4,7 @@ import { trpc } from "../utils/trpc";
 import { Analytics } from "@vercel/analytics/react";
 import { SessionProvider } from "next-auth/react";
 
+import "../styles/inter.css";
 import "../styles/globals.css";
 
 const MyApp: AppType<{ session: Session | null }> = ({
