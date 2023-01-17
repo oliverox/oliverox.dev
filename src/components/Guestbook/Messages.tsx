@@ -8,7 +8,10 @@ type msgType = {
 };
 
 export default function Messages() {
-  const { data: messages, isLoading } = trpc.guestbook.getAll.useQuery();
+  const { data: messages, isLoading } = trpc.guestbook.getAll.useQuery(undefined, {
+    refetchOnWindowFocus: false,
+    refetchOnMount: false
+  });
 
   if (isLoading) {
     return (
