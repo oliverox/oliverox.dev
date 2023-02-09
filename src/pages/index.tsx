@@ -4,7 +4,7 @@ import Link from "next/link";
 import {
   HeartIcon,
   Square3Stack3DIcon,
-  BookOpenIcon,
+  // BookOpenIcon,
   CodeBracketSquareIcon,
 } from "@heroicons/react/24/solid";
 import Logo from "../components/Logo/Logo";
@@ -25,7 +25,7 @@ const MenuLink: React.FC<MenuLinkProps> = ({
 }) => {
   return (
     <Link
-      className="menulink flex max-w-xs flex-col gap-5 rounded-xl p-8"
+      className="menulink flex max-w-sm flex-col gap-5 rounded-xl p-8"
       href={href}
       rel="noreferrer"
       target={target}
@@ -56,7 +56,7 @@ const Home: NextPage = () => {
             with Oliver Oxenham
           </span>
           <HireButton />
-          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 md:gap-8">
+          <div className="mt-10 grid grid-cols-1 gap-5 md:gap-8">
             <MenuLink href="/foundation">
               <div className="fx-row flex items-center space-x-2">
                 <HeartIcon className="h-6 w-6" />
@@ -87,7 +87,7 @@ const Home: NextPage = () => {
                 building high quality web apps.
               </div>
             </MenuLink>
-            <MenuLink href="/guestbook">
+            {/* <MenuLink href="/guestbook">
               <div className="flex flex-row items-center space-x-2">
                 <BookOpenIcon className="h-6 w-6" />
                 <h1 className="text-2xl font-bold">Guestbook →</h1>
@@ -95,7 +95,7 @@ const Home: NextPage = () => {
               <div className="text-lg">
                 Don&apos;t be shy! Let Oliver know you dropped by.
               </div>
-            </MenuLink>
+            </MenuLink> */}
           </div>
         </div>
       </main>

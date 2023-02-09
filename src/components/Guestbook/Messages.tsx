@@ -1,5 +1,5 @@
-import { trpc } from "../../utils/trpc";
-import Loading from "../Loading/Loading";
+// import { trpc } from "../../utils/trpc";
+// import Loading from "../Loading/Loading";
 
 type msgType = {
   message: string;
@@ -8,22 +8,22 @@ type msgType = {
 };
 
 export default function Messages() {
-  const { data: messages, isLoading } = trpc.guestbook.getAll.useQuery(undefined, {
-    refetchOnWindowFocus: false,
-    refetchOnMount: false
-  });
+  // const { data: messages, isLoading } = trpc.guestbook.getAll.useQuery(undefined, {
+  //   refetchOnWindowFocus: false,
+  //   refetchOnMount: false
+  // });
 
-  if (isLoading) {
-    return (
-      <div className="w-full text-center my-4">
-        <Loading text="Fetching messages..." />
-      </div>
-    );
-  }
+  // if (isLoading) {
+  //   return (
+  //     <div className="w-full text-center my-4">
+  //       <Loading text="Fetching messages..." />
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className="mx-auto mt-5 flex max-w-lg flex-col gap-4">
-      {messages?.map((msg: msgType, index: number) => {
+      {/* {messages?.map((msg: msgType, index: number) => {
         const chatContainerClasses = ["chat", "basis-full"];
         const chatBubbleClasses = ["chat-bubble", "mx-auto", "lg:w-5/6", "drop-shadow-md"];
         const chatTextClasses = ["mt-2", "flex", "flex-col"];
@@ -48,7 +48,7 @@ export default function Messages() {
             </div>
           </div>
         );
-      })}
+      })} */}
     </div>
   );
 }

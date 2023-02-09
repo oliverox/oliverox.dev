@@ -22,11 +22,11 @@ const getNavigation = (pathname: string) => {
       href: "/techstack",
       current: pathname === "/techstack",
     },
-    {
-      name: "Guestbook",
-      href: "/guestbook",
-      current: pathname === "/guestbook",
-    },
+    // {
+    //   name: "Guestbook",
+    //   href: "/guestbook",
+    //   current: pathname === "/guestbook",
+    // },
   ];
 };
 
@@ -36,7 +36,7 @@ function classNames(...classes: string[]) {
 
 export default function Header({ h1 = "" }: { h1: string }) {
   const router = useRouter();
-  const { data: session } = useSession();
+  // const { data: session } = useSession();
   const { pathname } = router;
   return (
     <div className="bg-base-300 pb-32">
@@ -77,7 +77,7 @@ export default function Header({ h1 = "" }: { h1: string }) {
                       <ThemeSwitcher />
 
                       {/* Profile dropdown */}
-                      <Menu as="div" className="relative ml-3">
+                      {/* <Menu as="div" className="relative ml-3">
                         <div>
                           <Menu.Button
                             className="flex max-w-xs items-center rounded-full border-2
@@ -143,7 +143,7 @@ export default function Header({ h1 = "" }: { h1: string }) {
                             )}
                           </Menu.Items>
                         </Transition>
-                      </Menu>
+                      </Menu> */}
                     </div>
                   </div>
                   <div className="-mr-2 flex md:hidden">
@@ -185,7 +185,7 @@ export default function Header({ h1 = "" }: { h1: string }) {
                   </Link>
                 ))}
               </div>
-              <div className="border-t border-gray-500 pt-4 pb-3">
+              {/* <div className="border-t border-gray-500 pt-4 pb-3">
                 <div className="flex items-center justify-between px-5">
                   <div className="flex h-8 flex-row items-center gap-2">
                     {session && session.user ? (
@@ -222,7 +222,7 @@ export default function Header({ h1 = "" }: { h1: string }) {
                     </Link>
                   </div>
                 )}
-              </div>
+              </div> */}
             </Disclosure.Panel>
           </>
         )}

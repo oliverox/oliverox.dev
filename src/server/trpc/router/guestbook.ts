@@ -6,16 +6,16 @@ import { router, publicProcedure, protectedProcedure } from "../trpc";
 export const guestbookRouter = router({
   getAll: publicProcedure.query(async ({ ctx }) => {
     try {
-      return await ctx.prisma.guestbook.findMany({
-        select: {
-          name: true,
-          message: true,
-          createdAt: true
-        },
-        orderBy: {
-          createdAt: "desc",
-        },
-      });
+      // return await ctx.prisma.guestbook.findMany({
+      //   select: {
+      //     name: true,
+      //     message: true,
+      //     createdAt: true
+      //   },
+      //   orderBy: {
+      //     createdAt: "desc",
+      //   },
+      // });
     } catch (error) {
       console.log("Error: getAll()", error);
     }
@@ -32,14 +32,14 @@ export const guestbookRouter = router({
     )
     .mutation(async ({ ctx, input }) => {
       try {
-        await ctx.prisma.guestbook.create({
-          data: {
-            name: input.name,
-            email: input.email,
-            message: input.message,
-            createdAt: input.createdAt
-          },
-        });
+        // await ctx.prisma.guestbook.create({
+        //   data: {
+        //     name: input.name,
+        //     email: input.email,
+        //     message: input.message,
+        //     createdAt: input.createdAt
+        //   },
+        // });
       } catch (error) {
         console.log("Error: postMessage()", error);
       }
